@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@include add-foundation-colors;
+
+$foundation-palette: (
+  primary: #a8b464,
+  secondary: #f0e9ac,
+  success: #a8b464,
+  warning: #ffae00,
+  alert: #cc4b37,
+);
