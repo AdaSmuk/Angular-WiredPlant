@@ -46,7 +46,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/foundation-sites/scss/foundation.scss",
+              "src/assets/scss/variables.scss"
             ],
             "scripts": []
           },
