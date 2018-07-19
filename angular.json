@@ -47,8 +47,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/foundation-sites/scss/foundation.scss",
-              "src/assets/scss/variables.scss"
+              "../node_modules/foundation-sites/scss/foundation.scss"
             ],
             "scripts": []
           },

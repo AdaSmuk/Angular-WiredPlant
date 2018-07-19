@@ -1,0 +1,15 @@
+@import '../../assets/scss/variables.scss';
+
+img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.logo {
+    font-family: 'Text Me One', sans-serif;
+    font-size: 1.8rem;
+    color: white;
+}
+.top-bar {
+    background-color: $primary;
+    padding: 0.5rem;
+}
