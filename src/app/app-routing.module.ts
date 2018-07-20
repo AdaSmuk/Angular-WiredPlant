@@ -1,3 +1,6 @@
+import { MainHubComponent } from './main-hub/main-hub.component';
+import { NavbarComponent } from './header/navbar/navbar.component';
+import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -7,10 +10,10 @@ const routes: Routes = [
   redirectTo: 'home',
   pathMatch: 'full'
 },
-// {
-//   path: 'home',
-//   component: MainHubComponent,
-// },
+{
+  path: 'home',
+  component: MainHubComponent,
+},
 // {
 //   path: 'alerts',
 //   component: AlertsComponent,

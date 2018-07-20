@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './header/navbar/navbar.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MainHubComponent } from './main-hub/main-hub.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    NavbarComponent
+    NavbarComponent,
+    MainHubComponent
   ],
   imports: [
     BrowserModule,

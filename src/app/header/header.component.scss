@@ -1,17 +1,17 @@
 @import '../../assets/scss/variables.scss';
 
 img {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
 }
 .logo {
     font-family: 'Text Me One', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: white;
 }
 .top-bar {
     background-color: $primary-color;
-    padding: 1rem;
+    padding: 0.6rem;
 }
 .fa-exclamation-triangle {
     color: white;
