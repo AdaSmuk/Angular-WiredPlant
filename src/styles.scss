@@ -1,4 +1,6 @@
-@import './node_modules/foundation-sites/scss/foundation.scss';
+@import '~foundation-sites/scss/foundation';
+@include foundation-everything(true);
+@import '/assets/scss/settings';
 
 body {
     overflow: hidden;
