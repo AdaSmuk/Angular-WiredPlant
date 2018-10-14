@@ -14,14 +14,6 @@ const routes: Routes = [
   path: 'home',
   component: MainHubComponent,
 },
-// {
-//   path: 'alerts',
-//   component: AlertsComponent,
-// },
-// {
-//   path: 'logs',
-//   component: LogsComponent,
-// },
 ];
 
 @NgModule({
