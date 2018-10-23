@@ -1,0 +1,29 @@
+<div class="container h-100 mt-5">
+    <div class="row h-100 justify-content-center align-items-center">
+        <form [formGroup]="newPlantForm">
+            <div class="form-group">
+                <label for="plantFamilyInput">Family name</label>
+                <br>
+                <input formControlName="plantFamily" id="plantFamilyInput" aria-describedby="plantFamilyHelp"
+                    placeholder="Enter family name">
+                <small id="plantFamilyHelp" class="form-text text-muted">Enter family name of your plant.</small>
+            </div>
+            <div class="form-group">
+                <label for="plantFamilyInput">Species</label>
+                <br>
+                <input formControlName="plantSpecies" id="plantSpeciesInput" aria-describedby="plantSpeciesHelp"
+                    placeholder="Enter species">
+                <small id="plantSpeciesHelp" class="form-text text-muted">Enter species of your plant.</small>
+            </div>
+            <div class="form-group">
+                <label for="plantNameInput">Name</label>
+                <br>
+                <input formControlName="plantName" id="plantNameInput" aria-describedby="plantNameHelp"
+                    placeholder="Enter name">
+                <small id="plantNameHelp" class="form-text text-muted">Enter a "personal" name of your plant.</small>
+            </div>
+
+            <button class="btn" [disabled]="newPlantForm.invalid">Submit</button>
+        </form>
+    </div>
+</div>

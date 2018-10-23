@@ -2,7 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'navbar',
-  templateUrl: './navbar.component.html'
+  templateUrl: './navbar.view.html'
 })
 export class NavbarComponent implements OnInit {
 

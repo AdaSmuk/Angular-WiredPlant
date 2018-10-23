@@ -2,7 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'main-header',
-  templateUrl: './header.component.html',
+  templateUrl: './header.view.html',
 })
 export class HeaderComponent implements OnInit {
 
