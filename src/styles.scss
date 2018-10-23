@@ -1,8 +1,3 @@
-@import '~foundation-sites/scss/foundation';
-@include foundation-everything(true);
-@import '/assets/scss/settings';
-
-body {
-    overflow: hidden;
-    margin:0;
-}
+@import 'assets/styles/variables';
+@import '~bootstrap/scss/bootstrap';
+@import 'assets/styles/main';

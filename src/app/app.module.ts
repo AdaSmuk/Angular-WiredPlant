@@ -3,22 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { NavbarComponent } from './header/navbar/navbar.component';
-import { MatIconModule } from '@angular/material/icon';
-import { MainHubComponent } from './main-hub/main-hub.component';
+
+import { HeaderComponent } from './Header/header.component';
+import { NavbarComponent } from './Navbar/navbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    NavbarComponent,
-    MainHubComponent
+    AppComponent, HeaderComponent, NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    MatIconModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
