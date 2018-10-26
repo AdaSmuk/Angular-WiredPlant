@@ -1,4 +1,7 @@
-<div class="container h-100 mt-5">
+<div class="modal-header">
+    <h4 class="modal-title rotated"><div>{{title}}</div></h4>
+</div>
+<div class="container h-100 mt-5 modal-body">
     <div class="row h-100 justify-content-center align-items-center">
         <form [formGroup]="newPlantForm">
             <div class="form-group">
@@ -18,12 +21,13 @@
             <div class="form-group">
                 <label for="plantNameInput">Name</label>
                 <br>
-                <input formControlName="plantName" id="plantNameInput" aria-describedby="plantNameHelp"
-                    placeholder="Enter name">
+                <input formControlName="plantName" id="plantNameInput" aria-describedby="plantNameHelp" placeholder="Enter name">
                 <small id="plantNameHelp" class="form-text text-muted">Enter a "personal" name of your plant.</small>
             </div>
-
-            <button class="btn" [disabled]="newPlantForm.invalid">Submit</button>
+            <div class="modal-footer">
+                <button class="btn" [disabled]="newPlantForm.invalid">Submit</button>
+                <button type="button" class="btn" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
+            </div>
         </form>
     </div>
 </div>

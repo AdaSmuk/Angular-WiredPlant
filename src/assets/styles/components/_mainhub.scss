@@ -1,0 +1,27 @@
+.main-hub {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    .alert-box {
+        width: 25%;
+        height: inherit;
+    }
+    .graph-box{
+        width: 50%;
+        height: inherit;
+        display: flex;
+        flex-direction: column;
+        .header-area{
+            color: $dark;
+            font-size: 1.8rem;
+            text-align: center;
+            width:100%;
+            height: 5rem;
+        }
+    }
+    .button-box {
+        width: 25%;
+        height: inherit;
+    }
+}

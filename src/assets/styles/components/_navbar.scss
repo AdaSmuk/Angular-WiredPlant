@@ -2,19 +2,47 @@
    background-color: $secondary;
    color: $dark;
    width: 100%;
-   display: inline-block;
+   height: 2.5rem;
    padding: 0;
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
 
-   .add-button {
-       font-size: 1.5rem;
-       padding: 0.5rem;
-       float: right;
-
-       &:hover {
+   .plant-dropdown {
+        padding: 0.5rem;
+        margin: 0;
+        height: inherit;
+        &:hover {
             background-color: $primary;
             color: white;
             cursor: pointer;
-       }
-   }
-   
+        }
+
+        .plant-button {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            
+        }
+
+        .caret-button {
+            padding: 0;
+            margin-left: 0.5rem;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+   } 
+   .add-button {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        height: inherit;
+        &:hover {
+            background-color: $primary;
+            color: white;
+            cursor: pointer;
+        }
+    }
 }
