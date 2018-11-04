@@ -1,1 +1,19 @@
-MAIN HUB BUTTONS
+<div class="button-group">
+    <div (click)="toggleLightButton()" class="main-hub-button" [ngClass]="{'toggled-button': toggleLightButtonCaption === 'ON', 'active-button': toggleLightButtonCaption === 'OFF'}">
+        <span>{{toggleLightButtonCaption}}</span>
+    </div>
+    <span class="button-caption">Toggle artificial light</span>
+</div>
+
+<div class="button-group">
+    <div (click)="getCurrentSensorData()" class="main-hub-button active-button">
+        <span>GET</span>
+    </div>
+    <span class="button-caption">Get current sensor data</span>
+</div>
+<div (click)="printPDF()" class="button-group">
+    <div class="main-hub-button active-button">
+        <span>PRINT</span>
+    </div>
+    <span class="button-caption">Print logs to PDF</span>
+</div>

@@ -23,5 +23,33 @@
     .button-box {
         width: 25%;
         height: inherit;
+        display: flex;
+        margin-top: 5rem;
+        .button-group {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 1.5rem;
+            min-height: 2rem;
+            text-align: center;
+            align-items: center;
+            .main-hub-button {
+                min-width: 5rem;
+                min-height: inherit;
+                padding: 0.5rem;
+                user-select: none;
+                &:hover {
+                    background-color: $dark !important;
+                }
+            }
+            .active-button {
+                background-color: $primary;
+            }
+            .toggled-button {
+                background-color: $secondary;
+            }
+            .button-caption {
+                margin-left: 0.5rem;
+            }
+        }
     }
 }
