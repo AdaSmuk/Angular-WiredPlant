@@ -8,8 +8,11 @@ export class MainHubAlertComponent implements OnInit {
 
   @HostBinding('class') styleClass = 'main-hub-alert';
 
+  public date: string;
+
   constructor() {}
 
   ngOnInit() {
+    this.date = new Date().toLocaleString();
   }
 }

@@ -1,1 +1,22 @@
-MAIN HUB ALERT
+<table class="table table-bordered table-hover table-sm">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">Alerts</th>
+        </tr>
+    </thead>
+</table>
+
+<div class="card">
+    <div class="card-body" [ngClass]="{'serious-alert': true}">
+        <h5 class="card-title">Overwatered</h5>
+        <h6 class="card-subtitle mb-2">{{date}}</h6>
+        <p class="card-text">Your plant is heavily overwatered!</p>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body" [ngClass]="{'serious-alert': false}">
+        <h5 class="card-title">Not enough sunlight</h5>
+        <h6 class="card-subtitle mb-2">{{date}}</h6>
+        <p class="card-text">Turning on artificial light is recommended.</p>
+    </div>
+</div>
