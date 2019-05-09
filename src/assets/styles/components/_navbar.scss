@@ -13,12 +13,9 @@
         margin: 0;
         height: inherit;
         &:hover {
-            cursor: pointer;
-        }
-
-        &.wired {
             background-color: $primary;
             color: white;
+            cursor: pointer;
         }
 
         .plant-button {

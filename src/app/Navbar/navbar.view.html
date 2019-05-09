@@ -1,14 +1,14 @@
-<div *ngFor="let plant of plantControl.plants" class="btn-group plant-dropdown" [ngClass]="{'wired': plant.plant_id === plantControl.currentlyWired.plant_id}" dropdown>
-  <a class="plant-button" (click)="plantControl.rewirePlants(plant)">{{plant.name}}</a>
+<div class="btn-group plant-dropdown" dropdown>
+  <a class="plant-button">Echeveria</a>
   <a id="button-split" dropdownToggle class="dropdown-toggle dropdown-toggle-split caret-button" aria-controls="dropdown-split">
     <span class="caret"></span>
   </a>
   <ul id="dropdown-split" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-split">
-    <li role="menuitem"><a class="dropdown-item" routerLink="/informations" [queryParams]="plant">Informations</a></li>
+    <li role="menuitem"><a class="dropdown-item" href="#">Information</a></li>
     <li class="divider dropdown-divider"></li>
-    <li role="menuitem"><a class="dropdown-item" routerLink="/alerts" [queryParams]="plant">Alerts</a></li>
+    <li role="menuitem"><a class="dropdown-item" href="#">Alerts</a></li>
     <li class="divider dropdown-divider"></li>
-    <li role="menuitem"><a class="dropdown-item" routerLink="/charts" [queryParams]="plant">Charts</a></li>
+    <li role="menuitem"><a class="dropdown-item" href="#">Graphs</a></li>
   </ul>
 </div>
 <i class="fa fa-plus-circle add-button" (click)="openAddNewPlantModal()"></i>
