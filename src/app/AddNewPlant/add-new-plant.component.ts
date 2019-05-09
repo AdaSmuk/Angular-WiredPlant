@@ -1,21 +1,24 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef } from 'ngx-bootstrap/modal';
+import { PlantControlService } from '../Core/Services/plant-control.service';
+import { Plant } from '../Core/Models/Plant';
 
 @Component({
   selector: 'add-new-plant',
-  templateUrl: './add-new-plant.view.html',
+  templateUrl: './add-new-plant.view.html'
 })
 export class AddNewPlantComponent implements OnInit {
 
   @HostBinding('class') styleClass = 'add-new-plant';
 
-  private newPlantForm: FormGroup;
-  private title: string;
-  private closeBtnName: string;
+  public newPlantForm: FormGroup;
+  public title: string;
+  public closeBtnName: string;
 
   constructor(private formBuilder: FormBuilder,
-              public bsModalRef: BsModalRef) { }
+              public bsModalRef: BsModalRef,
+              private plantControl: PlantControlService) { }
 
   ngOnInit() {
     this.newPlantForm = this.formBuilder.group({
@@ -29,6 +32,17 @@ export class AddNewPlantComponent implements OnInit {
         Validators.required
       ]],
     });
+  }
+
+  public submitNewPlant(): void {
+    const newPlant: Plant = new Plant();
+    newPlant.family = this.newPlantForm.controls["plantFamily"].value;
+    newPlant.species = this.newPlantForm.controls["plantSpecies"].value;
+    newPlant.name = this.newPlantForm.controls["plantName"].value;
+    this.plantControl.createPlant(newPlant).subscribe( observer => {
+      this.bsModalRef.hide();
+    });
+    
   }
 
 }

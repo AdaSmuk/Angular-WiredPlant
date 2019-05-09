@@ -6,17 +6,10 @@
     </thead>
 </table>
 
-<div class="card">
-    <div class="card-body" [ngClass]="{'serious-alert': true}">
-        <h5 class="card-title">Overwatered</h5>
-        <h6 class="card-subtitle mb-2">{{date}}</h6>
-        <p class="card-text">Your plant is heavily overwatered!</p>
-    </div>
-</div>
-<div class="card">
-    <div class="card-body" [ngClass]="{'serious-alert': false}">
-        <h5 class="card-title">Not enough sunlight</h5>
-        <h6 class="card-subtitle mb-2">{{date}}</h6>
-        <p class="card-text">Turning on artificial light is recommended.</p>
+<div *ngFor="let alert of freshBakedAlerts" class="card">
+    <div class="card-body" [ngClass]="{'serious-alert': alert.serious}">
+        <h5 class="card-title">{{alert.header}}</h5>
+        <h6 class="card-subtitle mb-2">{{alert.getFormatedDate()}}</h6>
+        <p class="card-text">{{alert.comment}}</p>
     </div>
 </div>

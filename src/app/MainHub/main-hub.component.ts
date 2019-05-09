@@ -1,4 +1,5 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
+import { PlantControlService } from '../Core/Services/plant-control.service';
 
 @Component({
   selector: 'main-hub',
@@ -8,7 +9,7 @@ export class MainHubComponent implements OnInit {
 
   @HostBinding('class') styleClass = 'main-hub';
 
-  constructor() { }
+  constructor(public plantControl: PlantControlService) { }
 
   ngOnInit() {
   }

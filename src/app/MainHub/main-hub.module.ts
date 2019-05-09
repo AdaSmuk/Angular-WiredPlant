@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 import { MainHubComponent } from './main-hub.component';
 import { MainHubAlertComponent } from './MainHubAlertComponent/main-hub-alert.component';
@@ -20,7 +19,7 @@ FusionChartsModule.fcRoot(FusionCharts, Widgets, FusionTheme);
         MainHubComponent, MainHubAlertComponent, MainHubGraphComponent, MainHubButtonsComponent
     ],
     imports: [
-        CommonModule, FormsModule, HttpModule, FusionChartsModule
+        CommonModule, HttpModule, FusionChartsModule
     ],
     providers: [],
     exports: [MainHubComponent, MainHubAlertComponent, MainHubGraphComponent, MainHubButtonsComponent]

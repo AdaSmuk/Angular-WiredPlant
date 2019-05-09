@@ -10,13 +10,13 @@
         .table {
             .thead-light {
                 th {
-                  color: $white;
-                  background-color: $primary;
-                  border-color: $primary;
-                  text-align: center;
-                  font-weight: normal !important;
+                    color: $white;
+                    background-color: $primary;
+                    border-color: $primary;
+                    text-align: center;
+                    font-weight: normal !important;
                 }
-              }
+            }
         }
         .serious-alert {
             background-color: $danger;

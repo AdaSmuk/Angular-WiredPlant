@@ -1,14 +1,14 @@
 <div class="chart-group">
     <div>
-        <fusioncharts width="{{temperatureWidth}}" height={{temperatureHeight}} type="thermometer" [dataSource]="temperatureDataSource">
+        <fusioncharts [width]="temperatureWidth" [height]="temperatureHeight" type="thermometer" [dataSource]="temperatureDataSource">
         </fusioncharts>
     </div>
     <div>
-        <fusioncharts width="{{sunlightWidth}}" height={{sunlightHeight}} type="Bulb" [dataSource]="sunlightDataSource">
+        <fusioncharts [width]="sunlightWidth" [height]="sunlightHeight" type="bulb" [dataSource]="sunlightDataSource">
         </fusioncharts>
     </div>
 </div>
 <div class="chart-group">
-    <fusioncharts width="{{soilMoistureWidth}}" height={{soilMoistureHeight}} type="AngularGauge" [dataSource]="soilMoistureDataSource">
+    <fusioncharts [width]="soilMoistureWidth" [height]="soilMoistureHeight" type="angulargauge" [dataSource]="soilMoistureDataSource">
     </fusioncharts>
 </div>

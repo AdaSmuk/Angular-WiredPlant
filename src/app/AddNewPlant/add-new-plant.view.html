@@ -25,7 +25,7 @@
                 <small id="plantNameHelp" class="form-text text-muted">Enter a "personal" name of your plant.</small>
             </div>
             <div class="modal-footer">
-                <button class="btn" [disabled]="newPlantForm.invalid">Submit</button>
+                <button type="submit" class="btn" [disabled]="newPlantForm.invalid" (click)="submitNewPlant()">Submit</button>
                 <button type="button" class="btn" (click)="bsModalRef.hide()">{{closeBtnName}}</button>
             </div>
         </form>

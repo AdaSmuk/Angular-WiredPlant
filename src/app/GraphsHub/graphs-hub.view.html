@@ -1,0 +1,14 @@
+<p [hidden]="!sunlightReady">Changes in sunlight intensivity over last week</p>
+<div [hidden]="!sunlightReady" class="sunlight-graph">
+    <canvas id="sunlightCanvas">{{ sunlightChart }}</canvas>
+</div>
+
+<p [hidden]="!wateringReady">Changes in soil moisture over last week</p>
+<div [hidden]="!wateringReady" class="watering-graph">
+    <canvas id="wateringCanvas">{{ wateringChart }}</canvas>
+</div>
+
+<p [hidden]="!temperatureReady">Changes in air temperature over last week</p>
+<div [hidden]="!temperatureReady" class="temperature-graph">
+    <canvas id="temperatureCanvas">{{ temperatureChart }}</canvas>
+</div>

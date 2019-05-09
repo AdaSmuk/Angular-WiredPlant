@@ -3,7 +3,7 @@
 </div>
 <div class="graph-box">
     <div class="header-area">
-        <div>Echeveria</div>
+        <div *ngIf="plantControl.currentlyWired != null">{{plantControl.currentlyWired.family}} {{plantControl.currentlyWired.species}}</div>
     </div>
     <main-hub-graph></main-hub-graph>
 </div>

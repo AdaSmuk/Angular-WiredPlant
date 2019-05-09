@@ -1,4 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
+import { LogsControlService } from 'src/app/Core/Services/logs-control.service';
+import { PlantControlService } from 'src/app/Core/Services/plant-control.service';
+import { ArtificialLightControlService } from 'src/app/Core/Services/artificial-light-control.service';
 
 @Component({
   selector: 'main-hub-graph',
@@ -8,9 +11,9 @@ export class MainHubGraphComponent implements OnInit {
 
   @HostBinding('class') styleClass = 'main-hub-graph';
 
-  public soilMoistureDataSource: Object;
-  public temperatureDataSource: Object;
-  public sunlightDataSource: Object;
+  public temperatureDataSource: any;
+  public soilMoistureDataSource: any;
+  public sunlightDataSource: any;
   public soilMoistureWidth: number;
   public soilMoistureHeight: number;
   public sunlightHeight: number;
@@ -18,29 +21,29 @@ export class MainHubGraphComponent implements OnInit {
   public temperatureHeight: number;
   public temperatureWidth: number;
 
-  private currentTemperaturColor: string;
-
-  constructor() {
-    this.currentTemperaturColor = '#7f8942';
-    this.temperatureDataSource = {
+  constructor(private logsControl: LogsControlService,
+              private plantControl: PlantControlService,
+              private alControl: ArtificialLightControlService) {
+      this.temperatureDataSource = {
       'chart': {
         'caption': 'Temperature Monitor',
-        'lowerLimit': '-30',
-        'upperLimit': '50',
+        'lowerlimit': '-10',
+        'upperlimit': '50',
         'decimals': '1',
-        'numberSuffix': '°C',
+        'numbersuffix': '°C',
         'showhovereffect': '1',
-        'thmFillColor': this.currentTemperaturColor,
-        'showGaugeBorder': '1',
-        'gaugeBorderColor': '#008ee4',
-        'gaugeBorderThickness': '2',
-        'gaugeBorderAlpha': '30',
-        'thmOriginX': '100',
-        'chartBottomMargin': '20',
-        'valueFontColor': '#000000',
+        'thmfillcolor': '#7f8942',
+        'showgaugeborder': '1',
+        'gaugebordercolor': '#008ee4',
+        'gaugeborderthickness': '2',
+        'gaugeborderalpha': '30',
+        'thmoriginx': '100',
+        'chartbottommargin': '20',
+        'valuefontcolor': '#000000',
+        'showvalue': '1',
         'theme': 'fusion'
       },
-      'value': '8',
+      'value': 0,
       'annotations': {
         'showbelow': '1',
       }
@@ -69,19 +72,19 @@ export class MainHubGraphComponent implements OnInit {
           },
           {
             'minvalue': '5000',
-            'maxvalue': '30000',
+            'maxvalue': '15000',
             'label': 'A bit cloudy',
             'code': '#82baa9'
           },
           {
-            'minvalue': '30000',
+            'minvalue': '15000',
             'maxvalue': '65535',
             'label': 'Bright and sunny!',
             'code': '#ffd756'
           }
         ]
       },
-      'value': '29000'
+      'value': 0
     };
     this.soilMoistureDataSource = {
       'chart': {
@@ -111,10 +114,35 @@ export class MainHubGraphComponent implements OnInit {
       },
       'dials': {
         'dial': [{
-          'value': '81'
+          'value': 0
         }]
       }
     };
+    this.plantControl.plantsReady.subscribe( value => {
+      this.logsControl.getLastLogs(this.plantControl.currentlyWired);
+    });
+    this.logsControl.logsReady.subscribe( value => {
+      this.updateChartData();
+    })
+    this.logsControl.newLogsReady.subscribe( value => {
+      this.logsControl.getLastLogs(this.plantControl.currentlyWired);
+      this.alControl.getLightStatus();
+    })
+  }
+
+  private updateChartData() {
+    this.soilMoistureDataSource['dials']['dial'][0]['value'] = this.logsControl.currentLogs.wateringLog.value;
+    this.sunlightDataSource.value = this.logsControl.currentLogs.sunlightLog.value;
+
+    this.temperatureDataSource.value = this.logsControl.currentLogs.temperatureLog.value;
+    if (this.logsControl.currentLogs.temperatureLog.value <= 10) {
+      this.temperatureDataSource.chart.thmFillColor = '#82baa9';
+    }
+    else if (this.logsControl.currentLogs.temperatureLog.value > 10 && this.logsControl.currentLogs.temperatureLog.value <= 16) {
+      this.temperatureDataSource.chart.thmFillColor = '#ffd756';
+    } else if (this.logsControl.currentLogs.temperatureLog.value > 16) {
+      this.temperatureDataSource.chart.thmFillColor = '#7f8942';
+    }
   }
 
   ngOnInit() {
@@ -126,5 +154,6 @@ export class MainHubGraphComponent implements OnInit {
 
     this.temperatureHeight = 250;
     this.temperatureWidth = 200;
+    
   }
 }
